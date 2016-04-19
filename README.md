@@ -14,3 +14,22 @@ Solutions from a small programming challenge for an interview with THS Armada.
 > You can use whatever programming language and libraries you want to solve this. We're currently using Python 3 for our next CRM system, so if you wanted some extra style points, you can use that.
 
 The attached file can be found at [number_pairs.txt](number_pairs.txt).
+
+## Math stuff
+The logarithm is a monotonic function, which means that
+
+    a > b <=> log(a) > log(b)
+
+which in turn means that
+
+    x = max([a0, ..., an]) <=> log(x) = max([log(a0), ..., log(an)])
+    
+so instead of finding `max([a0, ..., an])` directly, we can focus on finding `max([log(a0), ..., log(an)])` which should be a bit easier to compute. In fact, it's a lot easier to compute because we know that
+
+    log(b^e) = e * log(b)
+
+so for a list of base/exponent pairs [b0^e0, ..., bn^en] we have that
+
+    max([b0^e0, ..., bn^en]) = max([e0 * log(b0), ..., en * log(bn)])
+
+which is computationally feasible, at least if all bases and exponents are integers less than `sys.maxsize`.
