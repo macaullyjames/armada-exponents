@@ -28,7 +28,7 @@ so instead of finding `max([a0, ..., an])` directly, we can focus on finding `ma
 
     log(b^e) = e * log(b)
 
-so for a list of base/exponent pairs [b0^e0, ..., bn^en] we have that
+so for a list of base/exponent pairs `[b0^e0, ..., bn^en]` we have that
 
     bi^ei = max([b0^e0, ..., bn^en]) <=> ei * log(bi) = max([e0 * log(b0), ..., en * log(bn)])
 
