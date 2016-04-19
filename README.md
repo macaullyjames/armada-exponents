@@ -35,6 +35,8 @@ so for a list of base/exponent pairs [b0^e0, ..., bn^en] we have that
 which is computationally feasible, at least if all bases and exponents are integers less than `sys.maxsize`.
 
 ## Solutions
+Disclaimer: I am not a Python developer.
+
 ### First attempt ([alternative-a.py](alternative-a.py))
 ```Python
 import math
