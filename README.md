@@ -1,7 +1,7 @@
 # armada-exponents
 Solutions from a small programming challenge for an interview with THS Armada.
 
-Challenge description:
+## Challenge description
 > Hello,
 >
 > As part of the interview, we've prepared a pre-interview programming exercise/question:
@@ -12,3 +12,5 @@ Challenge description:
 > Which base<sup>exponent</sup> pair is the largest?
 >
 > You can use whatever programming language and libraries you want to solve this. We're currently using Python 3 for our next CRM system, so if you wanted some extra style points, you can use that.
+
+The attached file can be found at [number_pairs.txt](number_pairs.txt).
