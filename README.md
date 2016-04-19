@@ -1,5 +1,5 @@
 # armada-exponents
-Solutions from a small programming challenge for an interview with THS Armada.
+Solutions from a small programming challenge for an interview with [THS Armada](http://armada.nu).
 
 ## Challenge description
 > Hello,
