@@ -50,3 +50,14 @@ with open("number_pairs.txt", "r") as f:
     print("{},{}".format(max_base, max_exponent))
 ```
 I liked this solution for its clarity and the fact that it scales well; only two base/exponent pairs need be in memory at the same time. It is a bit ugly though and doesn't feel very "pythonic", more like a C++ dev trying to write Python for the first time. It's quite verbose as well, and I'm not a fan of reassigning variables; the names `max_exponent` and so on aren't actually semantic until the end of the loop. This makes me sad.
+
+### Second attempt ([alternative-b.py](alternative-b.py))
+```Python
+from math import log
+
+with open("number_pairs.txt", "r") as f:
+    pairs = [list(map(int, line.split(","))) for line in f]
+    base, exponent = max(pairs, key=lambda p: p[1]*log(p[0]))
+    print("{},{}".format(base, exponent))
+```
+This felt slightly more pythonic, but is waaay too terse. Figuring out what the `pairs` variable contains is a non-trivial task. `p[0]` and `p[1]` don't make for great variable names either, especially when squashed in a lambda. To be honest I'd have a hard time figuring out what this does if I hadn't written it myself. Not good.
