@@ -33,3 +33,20 @@ so for a list of base/exponent pairs [b0^e0, ..., bn^en] we have that
     max([b0^e0, ..., bn^en]) = max([e0 * log(b0), ..., en * log(bn)])
 
 which is computationally feasible, at least if all bases and exponents are integers less than `sys.maxsize`.
+
+## Solutions
+### First attempt ([alternative-a.py](alternative-a.py))
+```Python
+import math
+
+with open("number_pairs.txt", "r") as f:
+    max_base, max_exponent, max_log = 0, 0, float("-inf")
+    for line in f:
+        base, exponent = map(int, line.split(","))
+        log = exponent * math.log(base)
+        if log > max_log:
+            max_base, max_exponent, max_log = base, exponent, log
+
+    print("{},{}".format(max_base, max_exponent))
+```
+I liked this solution for its clarity and the fact that it scales well; only two base/exponent pairs need be in memory at the same time. It is a bit ugly though and doesn't feel very "pythonic", more like a C++ dev trying to write Python for the first time. It's quite verbose as well, and I'm not a fan of reassigning variables; the names `max_exponent` and so on aren't actually semantic until the end of the loop. This makes me sad.
