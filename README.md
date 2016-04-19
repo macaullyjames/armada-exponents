@@ -30,9 +30,9 @@ so instead of finding `max([a0, ..., an])` directly, we can focus on finding `ma
 
 so for a list of base/exponent pairs [b0^e0, ..., bn^en] we have that
 
-    max([b0^e0, ..., bn^en]) = max([e0 * log(b0), ..., en * log(bn)])
+    bi^ei = max([b0^e0), ..., bn^en)]) <=> ei * log(bi) = max([e0 * log(b0), ..., en * log(bn)])
 
-which is computationally feasible, at least if all bases and exponents are integers less than `sys.maxsize`.
+so it is simply a case of finding the base/exponent pair that maximises the expression `exponent * log(base)`. This is computationally feasible, at least if all bases and exponents are integers less than `sys.maxsize`.
 
 ## Solutions
 Disclaimer: I am not a Python developer.
